@@ -4,12 +4,17 @@ import { useState } from "react";
 import signIn from "@/app/firebase/auth/signIn";
 import { useRouter } from 'next/navigation'
 
+
+    interface Email {
+        email: string;
+    }
+
 export default function page() {
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+    const [email, setEmail] = useState<Email>('')
+    const [password, setPassword] = useState<string>('')
     const router = useRouter()
 
-    const handleForm = async (event: any) => {
+    const handleForm = async (event: React.ChangeEvent<HTMLInputElement>) => {
         event.preventDefault()
 
         const { result, error } = await signIn(email, password);
@@ -20,7 +25,7 @@ export default function page() {
 
         // else successful
         console.log(result)
-        return router.push("/admin")
+        return router.push("/home")
     }
     return (
         <div>
