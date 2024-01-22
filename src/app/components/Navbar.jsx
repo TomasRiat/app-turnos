@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 
 export default function Navbar() {
     return (
@@ -13,8 +14,8 @@ export default function Navbar() {
             </div>
             <nav>
                 <ul className="flex flex-row gap-4 justify-center items-center h-full">
-                    <li>Iniciar Sesion</li>
-                    <li>Registrarse</li>
+                    <Link href={"../signIn"}>Iniciar Sesion</Link>
+                    <Link href={"../signUp"}>Registrarse</Link>
                 </ul>
             </nav>
         </header>
