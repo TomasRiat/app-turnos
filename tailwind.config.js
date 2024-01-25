@@ -5,15 +5,14 @@ module.exports = {
   ],
   theme: {
     colors: {
-      // 'blue': '#1fb6ff',
-      // 'pink': '#ff49db',
-      // 'orange': '#ff7849',
-      // 'green': '#13ce66',
-      // 'gray-dark': '#273444',
-      // 'gray': '#8492a6',
-      // 'gray-light': '#d3dce6',
+       baseVioleta: '#d1abc8',
+       verde: '#666d41',
+       azul: '#8984ac',
+       amarillo: '#f9f3d6',
+       marron: '#c2b19a',
+       marronVerdoso: '#8e875f',
     },
   },
-  plugins: [],
+  plugins: [require('daisyui')],
 }
 
