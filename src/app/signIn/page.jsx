@@ -3,7 +3,7 @@ import Login from "./Login";
 const Page = () => {
    
     return (
-        <div className="grid place-items-center h-[90vh]">
+        <div className="my-4">
             <Login/>
         </div>
     );

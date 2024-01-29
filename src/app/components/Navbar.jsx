@@ -10,7 +10,7 @@ export default function Navbar() {
                     width={100}
                     height={100}
                     alt="Logo"
-                /> 
+                />
             </Link>
             <nav>
                 <ul className="flex flex-row gap-4 justify-center items-center h-full">

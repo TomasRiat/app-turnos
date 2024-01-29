@@ -4,6 +4,14 @@
 
 
 @layer components {
+
+  .background {
+    background-image: url('/image/background.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
   .radio-style {
     width: 15px;
     height: 15px;
