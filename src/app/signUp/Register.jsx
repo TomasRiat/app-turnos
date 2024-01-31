@@ -4,11 +4,13 @@ import { useState } from "react";
 
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { auth } from "../firebase/config";
+import { useRouter } from "next/navigation";
 
 
 const Register = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const router = useRouter()
 
     const [createUserWithEmailAndPassword] = useCreateUserWithEmailAndPassword(auth)
 
@@ -17,8 +19,10 @@ const Register = () => {
         try {
             const res = await createUserWithEmailAndPassword(email, password)
             console.log({ res })
+            sessionStorage.setItem('user', true)
             setEmail('')
             setPassword('')
+            router.push("/logged")
         } catch (error) {
             console.log(error.message)
         }
