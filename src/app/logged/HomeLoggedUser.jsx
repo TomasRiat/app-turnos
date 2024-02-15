@@ -11,7 +11,7 @@ export default function HomeLoggedUser() {
     const userSession = sessionStorage.getItem('user')
 
     if (!user && !userSession) {
-        router.push('/signUp')
+        router.push('/signIn')
     }
 
     return (
@@ -19,6 +19,7 @@ export default function HomeLoggedUser() {
             <button onClick={() => {
                 signOut(auth)
                 sessionStorage.removeItem('user')
+                router.push('/')
             }}>
                 cerrar sesion
             </button>
