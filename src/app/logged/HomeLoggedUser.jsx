@@ -4,6 +4,8 @@ import { useAuthState } from "react-firebase-hooks/auth"
 import { auth } from "../firebase/config"
 import { useRouter } from "next/navigation"
 import { signOut } from "firebase/auth"
+import Carousel from "../components/Carousel"
+import ButtonAgenda from "../components/ButtonAgenda"
 
 export default function HomeLoggedUser() {
     const [user] = useAuthState(auth)
@@ -15,14 +17,9 @@ export default function HomeLoggedUser() {
     }
 
     return (
-        <div>
-            <button onClick={() => {
-                signOut(auth)
-                sessionStorage.removeItem('user')
-                router.push('/')
-            }}>
-                cerrar sesion
-            </button>
-        </div>
+        <>
+            <Carousel />
+            <ButtonAgenda />
+        </>
     )
 }
